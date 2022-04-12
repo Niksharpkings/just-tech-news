@@ -1,5 +1,23 @@
 # *Just Tech News*
-Just-Tech-News is a news-based site with a coding theme for UCLAx Coding Bootcamp Full-Stack Developer module assignment where I will use (HTML, CSS, JS, Node.js, Express.js, Bcrypt, Dotenv, Sequelize, Mysql, mysql2, and Heroku). 
+-By Nikita Sharpio
+UCLAx Coding Bootcamp Full-Stack Developer Student
+module assignment: 13 
+
+
+Just-Tech-News is a news-based site with a coding theme 
+
+I will use
+*HTML, 
+*CSS, 
+*JS,
+*Node.js, 
+*Express.js, 
+*Bcrypt, 
+*Dotenv, 
+*Sequelize, 
+*Mysql, 
+*mysql2,  
+*Heroku 
 
 **Title:**
 Users can create, read, update, and delete a profile in the database
