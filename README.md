@@ -6,18 +6,20 @@ module assignment: 13
 
 Just-Tech-News is a news-based site with a coding theme 
 
-I will use
-*HTML, 
-*CSS, 
-*JS,
-*Node.js, 
-*Express.js, 
-*Bcrypt, 
-*Dotenv, 
-*Sequelize, 
-*Mysql, 
-*mysql2,  
-*Heroku 
+I will use:
+* HTML 
+* CSS 
+* JS
+* Node.js 
+* Express.js
+* Bcrypt 
+* Dotenv 
+* Sequelize 
+* Mysql 
+* mysql2  
+* Heroku 
+* VScode
+* Bash
 
 **Title:**
 Users can create, read, update, and delete a profile in the database
