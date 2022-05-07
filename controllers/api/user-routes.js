@@ -1,5 +1,10 @@
 const router = require('express').Router();
-const { User, Post, Comment, Vote } = require("../../models");
+const {
+  User,
+  Post,
+  Comment,
+  Vote
+} = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -17,32 +22,32 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   User.findOne({
-    attributes: { exclude: ['password'] },
-    where: {
-      id: req.params.id
-    },
-    include: [
-      {
-        model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+      attributes: {
+        exclude: ['password']
       },
-      // include the Comment model here:
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'created_at'],
-        include: {
+      where: {
+        id: req.params.id
+      },
+      include: [{
           model: Post,
-          attributes: ['title']
+          attributes: ['id', 'title', 'post_url', 'created_at']
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'created_at'],
+          include: {
+            model: Post,
+            attributes: ['title']
+          }
+        },
+        {
+          model: Post,
+          attributes: ['title'],
+          through: Vote,
+          as: 'voted_posts'
         }
-      },
-      {
-        model: Post,
-        attributes: ['title'],
-        through: Vote,
-        as: 'voted_posts'
-      }
-    ]
-  })
+      ]
+    })
     .then(dbUserData => {
       if (!dbUserData) {
         res.status(404).json({
