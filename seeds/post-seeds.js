@@ -1,8 +1,7 @@
-const {
-  Post
-} = require('../models');
+const { Post } = require('../models');
 
-const postdata = [{
+const postdata = [
+  {
     title: 'Donec posuere metus vitae ipsum.',
     post_url: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
     user_id: 10
@@ -78,7 +77,8 @@ const postdata = [{
     user_id: 3
   },
   {
-    title: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
+    title:
+      'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
     post_url: 'https://paginegialle.it/mattis/egestas.jsp',
     user_id: 7
   },

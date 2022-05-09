@@ -1,8 +1,7 @@
-const {
-  Vote
-} = require('../models');
+const { Vote } = require('../models');
 
-const votedata = [{
+const votedata = [
+  {
     user_id: 9,
     post_id: 19
   },
