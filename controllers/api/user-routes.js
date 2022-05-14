@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {username: 'Code from Lernantino UCLA Developer', email: 'random@email', password: 'any password'}
+  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-  
+
         res.json(dbUserData);
       });
     })
@@ -76,21 +76,21 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  // expects {username: 'Code from Lernantino UCLA Developer', email: 'random@email', password: 'any password'}
+  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
-      email: req.body.email,
-    },
-  }).then((dbUserData) => {
+      email: req.body.email
+    }
+  }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: "No user with that email address!" });
+      res.status(400).json({ message: 'No user with that email address!' });
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: "Incorrect password!" });
+      res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
 
@@ -99,7 +99,7 @@ router.post('/login', (req, res) => {
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: "You are now logged in!" });
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
 });
@@ -109,8 +109,7 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  }
-  else {
+  } else {
     res.status(404).end();
   }
 });
