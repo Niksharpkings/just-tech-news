@@ -3,6 +3,9 @@
 UCLAx Coding Bootcamp Full-Stack Developer Student
 module assignment: 13 
 
+## !Warning! Important updated note:
+> Heroku no longer supports free mangosDB mySQL database system since Nov 2022.
+Thus, deployed link and app no longer function unless it's runned thru local host only at the time being. Currently looking for a free public or open souced alternative for hosting this repo live site
 
 Just-Tech-News is a news-based site with a coding theme 
 
